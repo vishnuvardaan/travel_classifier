@@ -49,20 +49,33 @@ The company wants to launch a new **Wellness Tourism Package** and needs to iden
 
 ## Model Performance
 
-### Best Model: XGBoost Classifier
-**Optimized Parameters:**
+### Performance Comparison - All Models
+
+| Model | Training ROC AUC | Test ROC AUC | Test Accuracy | Test Precision | Test Recall | Test F1-Score |
+|-------|------------------|--------------|---------------|----------------|-------------|---------------|
+| **XGBoost (Optimized)** ⭐ | **1.0000** | **0.8882** | **95.09%** | **95.54%** | **78.53%** | **94.90%** |
+| XGBoost (Default) | 0.9986 | 0.8490 | 93.56% | 95.07% | 70.68% | 93.18% |
+| Random Forest (Optimized) | 1.0000 | 0.8319 | 93.05% | 96.24% | 67.02% | 92.55% |
+| Decision Tree | 1.0000 | 0.8626 | 91.92% | 80.77% | 76.96% | 91.85% |
+| Random Forest (Default) | 1.0000 | 0.8260 | 92.74% | 95.45% | 65.97% | 92.21% |
+| Gradient Boost | 0.7429 | 0.6824 | 85.89% | 77.32% | 39.27% | 83.98% |
+| AdaBoost | 0.6670 | 0.6400 | 83.54% | 66.30% | 31.94% | 81.15% |
+| Logistic Regression | 0.6366 | 0.6301 | 83.54% | 68.29% | 29.32% | 80.78% |
+
+### 🏆 Best Model: XGBoost Classifier (Optimized)
+**Hyperparameter Tuning Results:**
 - n_estimators: 200
 - max_depth: 12
 - learning_rate: 0.1
 - colsample_bytree: 1
 
-### **ROC AUC Score: 0.8882** 🎯
+### **🎯 Final ROC AUC Score: 0.8882**
 
-### Additional Metrics:
-- **Accuracy**: 84.58%
-- **Precision**: 69.94%
-- **Recall**: 30.32%
-- **F1-Score**: 82.00%
+**Key Performance Highlights:**
+- **Excellent Discrimination**: ROC AUC of 0.8882 indicates strong ability to distinguish between customers who will/won't purchase
+- **High Precision**: 95.54% precision minimizes false positives (wasted marketing spend)
+- **Balanced Performance**: Good balance between precision and recall for practical business application
+- **Significant Improvement**: 40.8% improvement in ROC AUC over baseline Logistic Regression
 
 ## Files Structure
 
